@@ -996,6 +996,27 @@ class Tagcolor(models.Model):
             "|tagcolor_name:" + str(tagcolor.tagcolor_name)
         )
 
+class Taghistory(models.Model):
+
+    # primary key
+    taghistory_id = models.AutoField(primary_key=True)
+
+    # foreign key(s)
+    system = models.ForeignKey('System', on_delete=models.CASCADE)
+
+    # main entity information
+    taghistory_type = models.CharField(max_length=30)
+    taghistory_value = models.CharField(max_length=30)
+
+    # meta information
+    taghistory_time = models.DateTimeField(auto_now_add=True)
+    #taghistory_user_id = models.ForeignKey(User, on_delete=models.PROTECT, related_name='taghistory_user')
+
+    # string representation
+    def __str__(self):
+        return str(self.taghistory_id)
+
+
 class Task(models.Model):
 
     # primary key
