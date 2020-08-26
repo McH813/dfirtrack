@@ -1,0 +1,15 @@
+name: Ansible Tests
+
+on:
+  push:
+    branches:
+    - master
+    - develop
+    paths:
+    - 'ansible/**'
+  pull_request:
+    branches:
+    - master
+    - develop
+    paths:
+    - 'ansible/**'
